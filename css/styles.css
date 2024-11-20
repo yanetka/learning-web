@@ -145,6 +145,44 @@ input[type="submit"]:hover {
     border-radius: 50%; /* Робить краї округлими, форму — овальною */
     border: 3px solid #0073e6;
 }
+/* Основний стиль кнопок */
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: linear-gradient(45deg, #28a745, #218838);
+    border: 2px solid #218838;
+    border-radius: 30px; /* Закруглені кути */
+    text-decoration: none; /* Для <a>, щоб прибрати підкреслення */
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Анімація при зміні стану */
+}
+
+/* Ефект при наведенні */
+.custom-button:hover {
+    background: linear-gradient(45deg, #218838, #1e7e34);
+    color: #e9ffe9;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Тінь при наведенні */
+    transform: translateY(-3px); /* Підняття */
+}
+
+/* Ефект натискання */
+.custom-button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Зменшення тіні */
+}
+
+/* Стиль кнопок для адаптивності */
+@media (max-width: 600px) {
+    .custom-button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
 
 
 
