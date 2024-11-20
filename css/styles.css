@@ -105,4 +105,46 @@ tr:nth-child(even) {
 tr:hover {
     background-color: #f1f1f1;
 }
+/* Стилі для форми */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+.profile-photo {
+    width: 200px;
+    height: 150px;
+    border-radius: 50%; /* Робить краї округлими, форму — овальною */
+    border: 3px solid #0073e6;
+}
+
+
 
