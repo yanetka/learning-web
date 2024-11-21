@@ -4,12 +4,16 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #fff;
     color: #333;
+    height: 100%; /* Забезпечуємо, щоб body займало всю висоту екрану */
+    overflow: hidden; /* Прибираємо прокрутку */
 }
 
 .page {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh; /* Забезпечуємо, щоб елементи займали всю висоту екрану */
+    overflow: hidden; /* Прибираємо прокрутку */
 }
 
 /* Header */
@@ -28,8 +32,10 @@ body {
 }
 
 .header__logo {
+    font-family: 'Playfair Display', serif; /* Шрифт для логотипу */
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 700; /* Можна змінити вагу для досягнення бажаного ефекту */
+    letter-spacing: 2px; /* Трошки розширюємо літери для ефекту */
 }
 
 /* Стилі для іконки меню */
@@ -77,7 +83,9 @@ body {
     width: 100%;
     padding: 2rem;
     box-sizing: border-box;
-    margin-top: 3rem; /* Додаємо відступ для верхньої частини */
+    margin-top: 3rem;
+    position: relative; /* Додаємо відносне позиціювання для належного позиціювання внутрішніх елементів */
+    height: calc(100vh - 140px); /* Висота блоку "Intro" повинна враховувати висоту заголовка */
 }
 
 .intro__text {
@@ -85,8 +93,9 @@ body {
 }
 
 .intro__title {
-    font-size: 3rem;
-    font-weight: bold;
+    font-family: 'Playfair Display', serif; /* Шрифт для заголовка */
+    font-size: 5rem;
+    font-weight: 700;
     margin: 0;
     line-height: 1.2;
     color: #333;
@@ -100,8 +109,17 @@ body {
 
 .intro__description {
     font-size: 1rem;
-    color: #777;
-    margin-bottom: 1.5rem;
+    color: #333; /* Темний колір тексту */
+    text-align: right; /* Вирівнюємо текст по правому краю */
+    position: absolute; /* Абсолютне позиціювання */
+    bottom: 20px; /* Відстань від низу зображення */
+    right: 20px; /* Відстань від правого краю зображення */
+    background-color: rgba(255, 255, 255, 0.7); /* Напівпрозорий білий фон для контрасту */
+    padding: 10px;
+    border-radius: 5px;
+    width: 70%; /* Обмежуємо ширину, щоб текст міг бути в два рядки */
+    line-height: 1.4; /* Збільшуємо міжрядковий інтервал для кращого вигляду */
+    word-wrap: break-word; /* Дозволяє розривати довгі слова */
 }
 
 .button {
@@ -125,14 +143,19 @@ body {
     display: flex;
     gap: 1.5rem;
     align-items: center;
+    justify-content: center; /* Центруємо зображення */
+    flex-wrap: wrap;
 }
 
 .intro__image--main {
-    width: 400px;
+    width: 60%;
+    max-width: 900px;
     height: auto;
     border-radius: 20px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     object-fit: cover;
+    transition: transform 0.3s ease;
+    position: relative;
 }
 
 .intro__image-group {
@@ -146,60 +169,4 @@ body {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Стилі для мобільних пристроїв */
-@media (max-width: 768px) {
-    /* В шапці */
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem;
-    }
-
-    .header__menu-list {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: flex-start;
-        margin-top: 1rem;
-    }
-
-    .intro {
-        flex-direction: column;
-        padding: 1.5rem;
-    }
-
-    .intro__text {
-        max-width: 100%;
-        text-align: center;
-    }
-
-    .intro__title {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    .intro__subtitle,
-    .intro__description {
-        text-align: center;
-    }
-
-    .intro__images {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .intro__image--main {
-        width: 300px;
-        margin-bottom: 1rem;
-    }
-
-    .intro__image {
-        width: 80px;
-    }
-
-    /* Показати кнопку меню на мобільних */
-    .header__hamburger {
-        display: block;
-    }
 }
