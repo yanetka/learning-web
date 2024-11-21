@@ -1,4 +1,4 @@
-/* General styles */
+/* Загальні стилі */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -10,59 +10,58 @@ body {
     height: 100vh;
 }
 
-/* Planner header container */
+/* Контейнер для заголовку планера */
 .planner-header {
-    width: 95%; /* Збільшено ширину контейнера */
-    max-width: 1000px; /* Більше простору для елементів */
+    width: 95%;
+    max-width: 1000px;
     background: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 1.5rem;
 }
 
-/* Row for header */
+/* Використовуємо Grid для розташування елементів */
 .header-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr; /* Розміщуємо елементи в 4 стовпці */
     align-items: center;
-    gap: 1rem;
-    flex-wrap: nowrap; /* Забороняємо перенос елементів */
-    overflow-x: auto; /* Додаємо горизонтальну прокрутку, якщо елементи не вміщаються */
+    gap: 1rem; /* Зменшити відстань між елементами */
+    width: 100%;
 }
 
-/* Header title */
+/* Стиль для заголовка */
 .header-row h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     margin: 0;
-    flex-shrink: 0; /* Забороняємо зменшення заголовка */
+    grid-column: span 1; /* Заголовок займає одну колонку */
 }
 
-/* Text inputs */
+/* Стилі для міток і полів вводу */
 .header-row label {
     font-size: 1rem;
+    margin: 0;
 }
 
+/* Стилі для полів вводу */
 .header-row input[type="text"] {
     padding: 0.5rem;
     font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 4px;
-    flex-shrink: 1; /* Текстові поля можуть адаптуватися */
-    max-width: 200px; /* Обмежуємо ширину полів */
 }
 
-/* Checkbox container */
+/* Контейнер для чекбоксів */
 .checkboxes {
     display: flex;
-    gap: 1rem; /* Простір між чекбоксами */
-    margin-left: auto; /* Вирівнюємо чекбокси праворуч */
-    flex-shrink: 0; /* Забороняємо зменшення чекбоксів */
+    flex-direction: column; /* Чекбокси один під одним */
+    gap: 0.5rem; /* Простір між чекбоксами */
 }
 
+/* Стилі для чекбоксів */
 .checkboxes label {
     font-size: 1rem;
     display: flex;
     align-items: center;
-    white-space: nowrap; /* Забороняємо перенос тексту в чекбоксах */
 }
 
 input[type="checkbox"] {
