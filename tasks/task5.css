@@ -1,0 +1,70 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+/* Planner header container */
+.planner-header {
+    width: 95%; /* Збільшено ширину контейнера */
+    max-width: 1000px; /* Більше простору для елементів */
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+/* Row for header */
+.header-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: nowrap; /* Забороняємо перенос елементів */
+    overflow-x: auto; /* Додаємо горизонтальну прокрутку, якщо елементи не вміщаються */
+}
+
+/* Header title */
+.header-row h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    flex-shrink: 0; /* Забороняємо зменшення заголовка */
+}
+
+/* Text inputs */
+.header-row label {
+    font-size: 1rem;
+}
+
+.header-row input[type="text"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex-shrink: 1; /* Текстові поля можуть адаптуватися */
+    max-width: 200px; /* Обмежуємо ширину полів */
+}
+
+/* Checkbox container */
+.checkboxes {
+    display: flex;
+    gap: 1rem; /* Простір між чекбоксами */
+    margin-left: auto; /* Вирівнюємо чекбокси праворуч */
+    flex-shrink: 0; /* Забороняємо зменшення чекбоксів */
+}
+
+.checkboxes label {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    white-space: nowrap; /* Забороняємо перенос тексту в чекбоксах */
+}
+
+input[type="checkbox"] {
+    margin-left: 0.5rem;
+}
