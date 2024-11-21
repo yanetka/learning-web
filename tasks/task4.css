@@ -1,209 +1,294 @@
-*, *::before, *::after {
-    box-sizing: border-box;
-    font-family: Roboto, Arial, Helvetica, sans-serif;
-}
-
+/* Загальні стилі */
 body {
     margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.main-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Бічна панель */
+.sidebar {
+    width: 240px;
+    background-color: #f9f9f9;
+    padding: 16px 8px;
+    overflow-y: auto;
+    border-right: 1px solid #ddd;
+    flex-shrink: 0;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 8px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: #e8e8e8;
+}
+
+.menu-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.menu-text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Верхня панель */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    border-bottom: 1px solid #ddd;
+    flex-shrink: 0;
+}
+
+.youtube-logo {
+    height: 30px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    max-width: 600px;
+    margin: 0 16px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.menu-icons img {
+    width: 24px;
+    height: 24px;
+    margin-left: 16px;
+    cursor: pointer;
+}
+
+/* Категорії */
+.categories {
+    padding: 8px 16px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.category-section {
+    display: flex;
+    gap: 8px;
+}
+
+.category {
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.category:hover {
+    background-color: #ddd;
+}
+
+.category.active {
+    background-color: #333;
+    color: white;
+}
+
+/* Відео */
+.videos {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
 }
 
 .video-section {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 3rem 1rem;
-    padding: 3rem 0;
-    margin: 0 1.5rem;
-    border-top: 4px solid #CCC;
-}
-
-.video-section:first-child {
-    border-top: none;
+    gap: 16px;
 }
 
 .video-container {
     display: flex;
     flex-direction: column;
+    gap: 8px;
 }
 
 .thumbnail {
     position: relative;
-    display: flex;
-}
-
-.thumbnail::before {
-    content: attr(data-duration);
-    position: absolute;
-    background-color: rgba(0, 0, 0, .85);
-    color: white;
-    right: 5px;
-    bottom: 5px;
-    padding: .1em .3em;
-    border-radius: .3em;
-    font-size: .9rem;
+    display: block;
 }
 
 .thumbnail-image {
     width: 100%;
-    height: 100%;
-    min-width: 250px;
-    min-height: 150px;
-    background-color: #AAA;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.thumbnail::after {
+    content: attr(data-duration);
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
 }
 
 .video-bottom-section {
     display: flex;
+    gap: 8px;
     align-items: flex-start;
-    margin-top: 1rem;
 }
 
 .channel-icon {
-    margin-right: .75rem;
-    border-radius: 50%;
     width: 36px;
     height: 36px;
-    background-color: #AAA;
+    border-radius: 50%;
+    flex-shrink: 0;
 }
 
 .video-details {
     display: flex;
     flex-direction: column;
+    gap: 4px;
 }
 
 .video-title {
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-bottom: .5rem;
-    text-decoration: none;
-    color: black;
-}
-
-.video-channel-name {
-    margin-bottom: .1rem;
-    text-decoration: none;
-    transition: color 150ms;
-}
-
-.video-channel-name:hover {
-    color: #111;
-}
-
-.video-channel-name,
-.video-metadata {
-    color: #555;
-}
-
-.video-section-title {
-    grid-column: 1 / -1;
-    margin: -.5rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 .5rem;
-}
-
-.video-section-title-close {
-    border: none;
-    background: none;
-    padding: 0;
-    font-size: 2rem;
-    color: #555;
-    cursor: pointer;
-}
-
-.videos {
-    background-color: #F9F9F9;
-}
-
-.categories {
-    padding: 1rem 2rem;
-    border-top: 1px solid #999;
-    border-bottom: 1px solid #999;
-}
-
-.category-section {
-    display: flex;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #333;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-.category {
-    margin-right: 1rem;
-    word-wrap: none;
-    white-space: nowrap;
-    border: 1px solid #CCC;
-    border-radius: 900px;
-    background-color: #E7E7E7;
-    padding: .5rem 1rem;
-    font-size: inherit;
-    cursor: pointer;
-    transition: background-color 150ms;
+.video-channel-name {
+    font-size: 12px;
+    color: #555;
 }
 
-.category:hover {
-    background-color: #DDD;
+.video-metadata {
+    font-size: 12px;
+    color: #777;
 }
 
-.category.active {
-    background-color: #606060;
-    color: white;
-    border-color: #EEE;
-}
+/* Адаптивність */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
 
-.category:last-child {
-    margin-right: 0;
-}
+    .sidebar {
+        display: none;
+    }
 
-.header {
+    .header {
+        justify-content: space-between;
+    }
+}
+.menu-toggle {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 1rem;
+    margin-bottom: 20px;
 }
 
-.youtube-logo {
-    height: 20px;
-}
-
-.search-bar {
-    display: flex;
-    flex-grow: 1;
-    margin: 0 2rem 0 4rem;
-}
-
-.search-input {
-    width: 100%;
-    font-size: inherit;
-    padding: .4em;
-    border: 1px solid #777;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.search-btn {
-    display: flex;
-    align-items: center;
-    padding: 0 1.25rem;
-    border: 1px solid #777;
-    background-color: #F8F8F8;
-    border-left: none;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+.menu-toggle .menu-icon {
+    width: 24px;
+    height: 24px;
     cursor: pointer;
 }
-
-.search-btn:hover {
-    background-color: #F0F0F0;
-}
-
-.menu-icons {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
+.sidebar {
+    width: 80px; /* Ширина бокової панелі */
+    background-color: #f9f9f9;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    padding: 10px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.menu-channel-icon {
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    background-color: #AAA;
+.menu-toggle {
+    margin-bottom: 20px;
+}
+
+.menu-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 5px;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.menu-text {
+    font-size: 12px; /* Розмір шрифту підписів */
+    color: #555;
+    text-align: center;
+}
+
+.menu-item:hover .menu-text {
+    color: #000;
+    font-weight: bold;
 }

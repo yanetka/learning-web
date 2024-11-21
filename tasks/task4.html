@@ -9,46 +9,73 @@
     <title>Document</title>
 </head>
 <body>
-<header class="header">
-    <a href="#">
-        <img src="logo.png" alt="YouTube Logo" class="youtube-logo" />
-    </a>
-    <form class="search-bar">
-        <input class="search-input" type="search" placeholder="Search" aria-label="Search" />
-        <button type="submit" class="search-btn">
-            <img src="magnify.svg" />
-        </button>
-    </form>
-    <div class="menu-icons">
-        <a href="#">
-            <img src="video-plus.svg" alt="Upload Video" />
-        </a>
-        <a href="#">
-            <img src="apps.svg" alt="Apps" />
-        </a>
-        <a href="#">
-            <img src="bell.svg" alt="Notifications" />
-        </a>
-        <a href="#">
-            <img class="menu-channel-icon" src="https:///unsplash.it/36/36?gravity=center" alt="Your Channel" />
-        </a>
-    </div>
-</header>
-<div class="categories">
-    <section class="category-section">
-        <button class="category active">Усі</button>
-        <button class="category">Ігри</button>
-        <button class="category">Музика</button>
-        <button class="category">Мікси</button>
-        <button class="category">Новини</button>
-        <button class="category">Мультфільми</button>
-        <button class="category">Пряма трансляція</button>
-        <button class="category">Мистецтво</button>
-        <button class="category">Нещодавні</button>
-    </section>
-</div>
+<div class="main-container">
+    <aside class="sidebar">
+        <nav class="sidebar-menu">
+            <div class="menu-toggle">
+                <img src="menu-icon.svg" alt="Меню" class="menu-icon">
+            </div>
+            <a href="#" class="menu-item">
+                <img src="home-icon.svg" alt="Головна" class="menu-icon">
+                <span class="menu-text">Головна</span>
+            </a>
+            <a href="#" class="menu-item">
+                <img src="shorts-icon.svg" alt="Shorts" class="menu-icon">
+                <span class="menu-text">Shorts</span>
+            </a>
+            <a href="#" class="menu-item">
+                <img src="subscriptions-icon.svg" alt="Підписки" class="menu-icon">
+                <span class="menu-text">Підписки</span>
+            </a>
+            <a href="#" class="menu-item">
+                <img src="channel-icon.svg" alt="Ваш канал" class="menu-icon">
+                <span class="menu-text">Ваш канал</span>
+            </a>
+        </nav>
+    </aside>
+
+    <div class="main-content">
+        <header class="header">
+            <a href="#">
+                <img src="logo.png" alt="YouTube Logo" class="youtube-logo" />
+            </a>
+            <form class="search-bar">
+                <input class="search-input" type="search" placeholder="Search" aria-label="Search" />
+                <button type="submit" class="search-btn">
+                    <img src="magnify.svg" alt="Search" />
+                </button>
+            </form>
+            <div class="menu-icons">
+                <a href="#">
+                    <img src="video-plus.svg" alt="Upload Video" />
+                </a>
+                <a href="#">
+                    <img src="apps.svg" alt="Apps" />
+                </a>
+                <a href="#">
+                    <img src="bell.svg" alt="Notifications" />
+                </a>
+                <a href="#">
+                    <img class="menu-channel-icon" src="https:///unsplash.it/36/36?gravity=center" alt="Your Channel" />
+                </a>
+            </div>
+        </header>
+
+        <div class="categories">
+            <section class="category-section">
+                <button class="category active">Усі</button>
+                <button class="category">Ігри</button>
+                <button class="category">Музика</button>
+                <button class="category">Мікси</button>
+                <button class="category">Новини</button>
+                <button class="category">Мультфільми</button>
+                <button class="category">Пряма трансляція</button>
+                <button class="category">Мистецтво</button>
+                <button class="category">Нещодавні</button>
+            </section>
+        </div>
 <div class="videos">
-    <section class="video-section">
+    <div class="video-section">
         <article class="video-container">
             <a href="#" class="thumbnail" data-duration="12:24">
                 <img class="thumbnail-image" src="https://unsplash.it/250/150?random=1" alt="Thumbnail 1" />
@@ -167,5 +194,7 @@
                 </div>
             </div>
         </article>
+    </div>
+</div>
 </body>
 </html>
