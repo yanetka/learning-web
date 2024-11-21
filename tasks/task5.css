@@ -100,3 +100,62 @@ body {
     border-radius: 4px;
     background: #fff;
 }
+/* Стиль для полів "Week of" та "Healthy Habit" */
+.planner-header .week-info input[type="text"],
+.planner-header .habit-info input[type="text"] {
+    border: none;
+    border-bottom: 2px solid #ccc; /* Тільки нижня лінія */
+    outline: none; /* Видаляє стандартну рамку */
+    font-size: 1.0rem; /* Збільшений розмір шрифту */
+    padding: 0.3rem 0; /* Трохи більше відступу */
+    background: transparent; /* Забирає фон */
+    width: 200px; /* Задає конкретну ширину */
+    transition: border-color 0.3s ease; /* Додає анімацію */
+}
+
+.planner-header .week-info input[type="text"]:focus,
+.planner-header .habit-info input[type="text"]:focus {
+    border-bottom: 2px solid #007BFF; /* Синя лінія при фокусі */
+}
+
+.checkboxes {
+    display: flex;
+    flex-direction: column; /* Розташування елементів у стовпчик */
+    align-items: flex-start; /* Вирівнювання елементів по лівому краю */
+    gap: 0.5rem; /* Відстань між рядками */
+}
+
+.checkboxes label {
+    display: flex;
+    align-items: center; /* Центрування тексту та чекбокса */
+    font-size: 1rem;
+}
+/* Стиль для елементів списку з чекбоксом і полем вводу (для кожної секції) */
+ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Стиль для полів вводу (Goals, Tasks, Plans) */
+.goal-input {
+    border: none;
+    border-bottom: 2px solid #ccc; /* Тільки нижня лінія */
+    outline: none;
+    font-size: 1rem;
+    padding: 0.2rem 0;
+    background: transparent;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+/* Стиль для полів вводу при фокусі */
+.goal-input:focus {
+    border-bottom: 2px solid #007BFF;
+}
+
+/* Стиль для чекбоксів поруч з полями вводу */
+ul li input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
