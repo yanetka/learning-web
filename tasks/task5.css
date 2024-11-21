@@ -10,60 +10,93 @@ body {
     height: 100vh;
 }
 
-/* Контейнер для заголовку планера */
-.planner-header {
+/* Контейнер планера */
+.planner {
     width: 95%;
     max-width: 1000px;
     background: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column; /* Елементи йдуть один під одним */
+    gap: 1.5rem;
 }
 
-/* Використовуємо Grid для розташування елементів */
-.header-row {
+/* Заголовок */
+.planner-header {
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr 1fr; /* Розміщуємо елементи в 4 стовпці */
+    grid-template-columns: 1fr 2fr 2fr 1fr; /* Розташування заголовка та чекбоксів */
+    gap: 1rem;
     align-items: center;
-    gap: 1rem; /* Зменшити відстань між елементами */
-    width: 100%;
 }
 
-/* Стиль для заголовка */
-.header-row h1 {
-    font-size: 1.5rem;
+/* Тіло планера */
+.planner-body {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Ліва колонка (цілі) та права (дні тижня) */
+    gap: 1.5rem;
+}
+
+/* Ліва колонка */
+.left-column {
+    background: #f5f5f5;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.left-column h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.left-column ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
-    grid-column: span 1; /* Заголовок займає одну колонку */
 }
 
-/* Стилі для міток і полів вводу */
-.header-row label {
-    font-size: 1rem;
-    margin: 0;
+.left-column li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
 }
 
-/* Стилі для полів вводу */
-.header-row input[type="text"] {
+.left-column li input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+/* Права колонка */
+.right-column {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 стовпці для днів тижня */
+    gap: 1rem;
+}
+
+.right-column .day {
+    background: #f5f5f5;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-column .day h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.right-column .day textarea {
+    flex-grow: 1;
+    resize: none;
     padding: 0.5rem;
     font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 4px;
-}
-
-/* Контейнер для чекбоксів */
-.checkboxes {
-    display: flex;
-    flex-direction: column; /* Чекбокси один під одним */
-    gap: 0.5rem; /* Простір між чекбоксами */
-}
-
-/* Стилі для чекбоксів */
-.checkboxes label {
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-}
-
-input[type="checkbox"] {
-    margin-left: 0.5rem;
+    background: #fff;
 }

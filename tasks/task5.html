@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="task5.css">
 </head>
 <body>
-<div class="planner-header">
-    <div class="header-row">
+<div class="planner">
+    <!-- Заголовок -->
+    <div class="planner-header">
         <h1>WEEKLY PLAN</h1>
 
         <div class="week-info">
@@ -29,6 +30,68 @@
                 Room for Improvement <input type="checkbox" id="room-for-improvement">
             </label>
         </div>
+    </div>
+
+    <!-- Основне тіло планера -->
+    <div class="planner-body">
+        <!-- Ліва колонка -->
+        <div class="left-column">
+            <h2>Top 3 Goals</h2>
+            <ul>
+                <li><input type="checkbox"> Goal 1</li>
+                <li><input type="checkbox"> Goal 2</li>
+                <li><input type="checkbox"> Goal 3</li>
+            </ul>
+
+            <h2>Everything Else</h2>
+            <ul>
+                <li><input type="checkbox"> Task 1</li>
+                <li><input type="checkbox"> Task 2</li>
+                <li><input type="checkbox"> Task 3</li>
+            </ul>
+
+            <h2>Next Week</h2>
+            <ul>
+                <li><input type="checkbox"> Plan 1</li>
+                <li><input type="checkbox"> Plan 2</li>
+            </ul>
+        </div>
+
+        <!-- Права колонка -->
+        <div class="right-column">
+            <div class="day">
+                <h3>Monday</h3>
+                <textarea placeholder="Write tasks here"></textarea>
+            </div>
+            <div class="day">
+                <h3>Tuesday</h3>
+                <textarea placeholder="Write tasks here"></textarea>
+            </div>
+            <div class="day">
+                <h3>Wednesday</h3>
+                <textarea placeholder="Write tasks here"></textarea>
+            </div>
+            <div class="day">
+                <h3>Thursday</h3>
+                <textarea placeholder="Write tasks here"></textarea>
+            </div>
+            <div class="day">
+                <h3>Friday</h3>
+                <textarea placeholder="Write tasks here"></textarea>
+            </div>
+            <!-- Контейнер для суботи та неділі -->
+            <div class="day weekend">
+                <div class="weekend-day">
+                    <h3>Saturday</h3>
+                    <textarea placeholder="Write tasks here"></textarea>
+                </div>
+                <div class="weekend-day">
+                    <h3>Sunday</h3>
+                    <textarea placeholder="Write tasks here"></textarea>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 </body>
