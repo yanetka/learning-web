@@ -1,0 +1,205 @@
+/* Загальні стилі */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.header__left {
+    display: flex;
+    align-items: center;
+}
+
+.header__logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Стилі для іконки меню */
+.header__hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.header__hamburger-icon {
+    width: 30px; /* Розмір іконки */
+    height: 30px;
+    display: block;
+}
+
+/* Меню */
+.header__menu-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.header__menu-item {
+    margin-left: 1rem;
+}
+
+.header__menu-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.header__menu-link:hover {
+    color: #555;
+}
+
+/* Intro Section */
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    margin-top: 3rem; /* Додаємо відступ для верхньої частини */
+}
+
+.intro__text {
+    max-width: 50%;
+}
+
+.intro__title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.2;
+    color: #333;
+}
+
+.intro__subtitle {
+    font-size: 1.25rem;
+    margin: 1rem 0;
+    color: #555;
+}
+
+.intro__description {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 1.5rem;
+}
+
+.button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #8b4513;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #663300;
+}
+
+/* Images */
+.intro__images {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.intro__image--main {
+    width: 400px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+.intro__image-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.intro__image {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стилі для мобільних пристроїв */
+@media (max-width: 768px) {
+    /* В шапці */
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .header__menu-list {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+        margin-top: 1rem;
+    }
+
+    .intro {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+
+    .intro__text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .intro__title {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .intro__subtitle,
+    .intro__description {
+        text-align: center;
+    }
+
+    .intro__images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .intro__image--main {
+        width: 300px;
+        margin-bottom: 1rem;
+    }
+
+    .intro__image {
+        width: 80px;
+    }
+
+    /* Показати кнопку меню на мобільних */
+    .header__hamburger {
+        display: block;
+    }
+}
