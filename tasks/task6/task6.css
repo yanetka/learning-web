@@ -1,0 +1,150 @@
+/* styles.css */
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #87ceeb, #ffffff); /* Небо */
+}
+
+.game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    cursor: none; /* Приховуємо курсор */
+}
+
+.pokemon {
+    position: absolute;
+    width: 80px;
+    transition: transform 0.5s ease, top 0.5s ease, left 0.5s ease, opacity 1s ease;
+}
+
+/* Покебол */
+.pokeball {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: none; /* Щоб не блокував покемона */
+    transition: transform 0.1s ease;
+}
+
+/* Зміна кольору покебола при ловлі */
+.pokeball-catching {
+    animation: catching 0.5s ease-out;
+}
+
+/* Анімація для покебола */
+@keyframes catching {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Анімація при русі покебола (тряска) */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Пульсація покебола */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Таймер */
+.timer {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    font-size: 20px;
+    color: #333;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Фінальне повідомлення */
+.result {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column; /* Розташування дочірніх елементів вертикально */
+    align-items: center; /* Вирівнювання по горизонталі */
+}
+
+.result h1 {
+    font-size: 36px;
+    color: #f00;
+}
+
+.result p {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Кнопка перезапуску */
+.restart-button {
+    margin-top: 20px; /* Відступ між текстом результату та кнопкою */
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    background-color: #f00;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: none; /* Прихована до завершення гри */
+}
+
+.restart-button:hover {
+    background-color: #d00;
+}
+
+/* Покемонів переміщення */
+@keyframes movePokemon {
+    0% { transform: translate(0, 0); }
+    10% { transform: translate(150px, 50px); }
+    20% { transform: translate(200px, 100px); }
+    30% { transform: translate(100px, 250px); }
+    40% { transform: translate(-150px, 100px); }
+    50% { transform: translate(0, 200px); }
+    60% { transform: translate(-100px, 50px); }
+    70% { transform: translate(150px, -50px); }
+    80% { transform: translate(-200px, -100px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Ефект втягування покемона в покебол */
+@keyframes suckIn {
+    0% {
+        transform: scale(1); /* Початковий розмір покемона */
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.5); /* Покемон зменшується */
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(0); /* Покемон зникає */
+        opacity: 0;
+    }
+}
+
+.pokemon.caught {
+    animation: suckIn 1s ease-out forwards; /* Анімація втягування */
+}
