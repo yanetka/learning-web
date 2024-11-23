@@ -1,188 +1,167 @@
 /* Загальні стилі */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Заголовок */
+.main-header {
+    background-color: #0077b6;
+    color: #fff;
+    padding: 1.5em 0;
     text-align: center;
 }
 
-header h1 {
+.main-header h1 {
+    font-size: 2em;
     margin: 0;
 }
 
-nav ul {
+.main-header h1 span {
+    color: #ffcb42;
+}
+
+.navigation ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 1em 0 0;
     display: flex;
     justify-content: center;
-    background-color: #444;
+    gap: 1.5em;
 }
 
-nav ul li {
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: white;
+.navigation a {
+    color: #fff;
     text-decoration: none;
-    padding: 5px 10px;
+    font-weight: bold;
 }
 
-nav ul li a:hover {
-    background-color: #555;
-    border-radius: 5px;
+.navigation a:hover {
+    text-decoration: underline;
 }
 
+/* Основний контент */
 main {
-    padding: 20px;
+    padding: 2em 0;
 }
 
-section {
-    margin-bottom: 20px;
+h2 {
+    color: #0077b6;
+    font-size: 1.8em;
+    margin-bottom: 1em;
+}
+
+/* Секція "Про мене" */
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    align-items: center;
+    margin-bottom: 2em;
+}
+.profile {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5em;
 }
 
 .profile-photo {
-    max-width: 150px;
+    flex-shrink: 0;
     border-radius: 50%;
-    display: block;
-    margin: 10px auto;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
+.profile-info {
+    max-width: 600px;
 }
 
-footer ul {
+.profile-info p {
+    margin-bottom: 1em;
+}
+
+.profile-info ul {
     list-style: none;
     padding: 0;
 }
 
-footer ul li {
-    display: inline;
-    margin: 0 5px;
-}
-
-footer ul li a {
-    color: white;
+.profile-info a {
+    color: #0077b6;
     text-decoration: none;
 }
-/* Стилі для таблиці */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
+
+.profile-info a:hover {
+    text-decoration: underline;
 }
 
-table, th, td {
-    border: 1px solid #ddd;
+/* Секція "Практичні роботи" */
+.practical-section ul {
+    list-style: none;
+    padding: 0;
 }
 
-th, td {
-    padding: 10px;
+.practical-section li {
+    margin-bottom: 1em;
+}
+
+.practical-section a {
+    color: #0077b6;
+    text-decoration: none;
+}
+
+.practical-section a:hover {
+    text-decoration: underline;
+}
+
+/* Футер */
+.main-footer {
+    background-color: #333;
+    color: #fff;
     text-align: center;
+    padding: 1.5em 0;
 }
 
-th {
-    background-color: #f4f4f4;
+.main-footer p {
+    margin: 0.5em 0;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.social-links a {
+    color: #ffcb42;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+.navigation .active {
+    text-decoration: underline;
     font-weight: bold;
+    color: #ffcb42;
 }
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
+.labs-image {
+    width: 100%;  /* Зображення буде займати всю ширину екрану */
+    height: auto; /* Пропорції зображення залишаються правильними */
+    object-fit: cover; /* Обрізає зображення, щоб воно заповнило контейнер, зберігаючи пропорції */
+    display: block; /* Виправляє можливі пробіли під зображенням */
+    margin-top: 20px;
 }
-
-tr:hover {
-    background-color: #f1f1f1;
-}
-/* Стилі для форми */
-form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-input, select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background-color: #45a049;
-}
-.profile-photo {
-    width: 200px;
-    height: 150px;
-    border-radius: 50%; /* Робить краї округлими, форму — овальною */
-    border: 3px solid #0073e6;
-}
-/* Основний стиль кнопок */
-.custom-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #ffffff;
-    background: linear-gradient(45deg, #28a745, #218838);
-    border: 2px solid #218838;
-    border-radius: 30px; /* Закруглені кути */
-    text-decoration: none; /* Для <a>, щоб прибрати підкреслення */
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out; /* Анімація при зміні стану */
-}
-
-/* Ефект при наведенні */
-.custom-button:hover {
-    background: linear-gradient(45deg, #218838, #1e7e34);
-    color: #e9ffe9;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Тінь при наведенні */
-    transform: translateY(-3px); /* Підняття */
-}
-
-/* Ефект натискання */
-.custom-button:active {
-    transform: translateY(0);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Зменшення тіні */
-}
-
-/* Стиль кнопок для адаптивності */
-@media (max-width: 600px) {
-    .custom-button {
-        font-size: 14px;
-        padding: 8px 15px;
-    }
-}
-
-
-
