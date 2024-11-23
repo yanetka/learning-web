@@ -1,25 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuperPhone X</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grat Sounds Solo Headphone</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="task8.css">
 </head>
 <body>
-<div class="landing-page">
-    <header class="header">
-        <h1 class="header__title">SuperPhone X</h1>
-    </header>
-    <section class="intro">
-        <p class="intro__text">
-            Новий SuperPhone X — ідеальне поєднання продуктивності та стилю.
-            Оснащений потужним процесором, чудовою камерою та батареєю, що тримає цілий день.
-        </p>
-    </section>
-    <div class="button-container">
-        <button class="button">Дізнатися більше</button>
+<div class="page-container">
+<!-- Верхня панель -->
+<header>
+    <div class="container header-container">
+        <div class="logo">Logo</div>
+        <nav class="nav-links">
+            <a href="#">home</a>
+            <a href="#">product</a>
+            <a href="#">review</a>
+        </nav>
+        <div class="icons">
+            <!-- Кнопка пошуку -->
+            <button class="search-btn">
+                <img src="search-icon.svg" alt="Пошук" class="search-icon">
+            </button>
+
+            <!-- Кнопка меню (гамбургер) -->
+            <button class="header__hamburger">
+                <img src="hamburger-icon.svg" alt="Меню" class="header__hamburger-icon">
+            </button>
+        </div>
     </div>
+</header>
+
+<!-- Основний контент -->
+<section class="intro">
+    <div class="container intro-container">
+        <div class="text-content">
+            <h2 class="headline">Lorem ipsum dolor sit amet.</h2>
+            <p class="subheadline">Grat Sounds With Solo Headphone</p>
+
+            <!-- Ціна і Shop Now в одному рядку -->
+            <div class="price-button">
+                <p class="price">$450</p>
+                <a href="#" class="cta-link">Shop Now</a>
+            </div>
+        </div>
+        <div class="image-content">
+            <img src="headphones.jpg" alt="Solo Headphone">
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </div>
+</footer>
 </div>
 </body>
 </html>

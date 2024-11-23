@@ -1,0 +1,202 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Merriweather", serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: #333;
+}
+
+body {
+  font-family: "Merriweather", serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: #333;
+}
+
+header {
+  background-color: white;
+  color: #333;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+header .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+header .logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+header .nav-links {
+  display: flex;
+  gap: 20px;
+}
+header .nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+header .nav-links a:hover {
+  color: #333;
+}
+header .icons {
+  display: flex;
+  gap: 15px;
+}
+header .icons .search-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s, transform 0.3s;
+}
+header .icons .search-btn:hover {
+  background-color: #777;
+  transform: scale(1.1);
+}
+header .icons .search-btn .search-icon {
+  width: 20px;
+  height: 20px;
+}
+header .icons .header__hamburger {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background-color 0.3s, transform 0.3s;
+}
+header .icons .header__hamburger:hover {
+  background-color: #777;
+  transform: scale(1.1);
+}
+header .icons .header__hamburger .header__hamburger-icon {
+  width: 25px;
+  height: 25px;
+}
+
+.intro {
+  flex: 1;
+  margin-top: 60px;
+  padding: 20px 0;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.intro .intro-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.intro .text-content {
+  width: 50%;
+  padding-right: 20px;
+  text-align: left;
+}
+.intro .text-content .headline {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+.intro .text-content .subheadline {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+.intro .text-content .price-button {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.intro .text-content .price-button .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+.intro .text-content .price-button .cta-link {
+  font-size: 1.2rem;
+  color: #333;
+  text-decoration: none;
+  position: relative;
+}
+.intro .text-content .price-button .cta-link:hover {
+  color: rgb(25.5, 25.5, 25.5);
+}
+.intro .text-content .price-button .cta-link:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  visibility: hidden;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: all 0.3s ease-in-out;
+}
+.intro .text-content .price-button .cta-link:hover:after {
+  visibility: visible;
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.intro .image-content {
+  width: 40%;
+}
+.intro .image-content img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: #f9f9f9;
+  color: #333;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 50px;
+  flex-shrink: 0;
+}
+footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/*# sourceMappingURL=task8.css.map */

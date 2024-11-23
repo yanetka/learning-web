@@ -1,68 +1,257 @@
 // Змінні
-$primary-color: #4caf50;
-$secondary-color: #ffffff;
-$text-color: #333333;
-$font-family: 'Arial, sans-serif';
-$button-radius: 8px;
+$primary-color: #333;
+$secondary-color: #f0f0f5;
+$dark-gray: #333;
+$light-gray: #777;
+$font-family: 'Merriweather', serif;
+$button-padding: 15px 30px;
+$border-radius: 5px;
+$icon-size: 20px;
+$button-radius: 50%; // Кругла форма для кнопок
 
 // Міксини
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin button-style($bg-color, $text-color) {
+@mixin button-style($bg-color) {
   background-color: $bg-color;
-  color: $text-color;
+  color: white;
   border: none;
-  padding: 12px 24px;
-  border-radius: $button-radius;
+  padding: $button-padding;
   font-size: 16px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  border-radius: $border-radius;
+  transition: background-color 0.3s ease;
 
   &:hover {
     background-color: darken($bg-color, 10%);
   }
 }
 
-// Стили
-body {
+// Заборонити прокручування сторінки
+html, body {
+  height: 100%;
   margin: 0;
+  padding: 0;
+  overflow: hidden;  // Забороняє прокручування
   font-family: $font-family;
-  color: $text-color;
-  background-color: $secondary-color;
-}
-
-.landing-page {
-  height: 100vh;
-  @include flex-center;
+  display: flex;
   flex-direction: column;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: $dark-gray;
+}
 
-  .header {
-    margin-bottom: 20px;
+// Стилі для body
+body {
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: $dark-gray;
+}
 
-    &__title {
-      font-size: 36px;
-      color: $primary-color;
+// Стилі для header
+header {
+  background-color: white;
+  color: $dark-gray;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+
+    a {
+      text-decoration: none;
+      color: $dark-gray;
+      font-size: 1rem;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $primary-color;
+      }
     }
   }
 
-  .intro {
-    margin-bottom: 30px;
+  .icons {
+    display: flex;
+    gap: 15px;
 
-    &__text {
-      font-size: 18px;
-      max-width: 600px;
-      line-height: 1.5;
+    .search-btn {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      border-radius: $button-radius;
+      transition: background-color 0.3s, transform 0.3s;
+
+      &:hover {
+        background-color: $light-gray;
+        transform: scale(1.1);
+      }
+
+      .search-icon {
+        width: 20px;
+        height: 20px;
+      }
     }
-  }
 
-  .button-container {
-    .button {
-      @include button-style($primary-color, $secondary-color);
+    .header__hamburger {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-radius: $button-radius;
+      transition: background-color 0.3s, transform 0.3s;
+
+      &:hover {
+        background-color: $light-gray;
+        transform: scale(1.1);
+      }
+
+      .header__hamburger-icon {
+        width: 25px;
+        height: 25px;
+      }
     }
   }
 }
+
+// Стилі для секції intro
+.intro {
+  flex: 1;
+  margin-top: 60px;
+  padding: 20px 0;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .intro-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .text-content {
+    width: 50%;
+    padding-right: 20px;
+    text-align: left;
+
+    .headline {
+      font-size: 1rem;
+      color: $light-gray;
+      margin-bottom: 10px;
+    }
+
+    .subheadline {
+      font-size: 4rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: $dark-gray;
+    }
+
+    .price-button {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .price {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: $primary-color;
+      }
+
+      .cta-link {
+        font-size: 1.2rem;
+        color: $primary-color;
+        text-decoration: none;
+        position: relative;
+
+        &:hover {
+          color: darken($primary-color, 10%);
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: $primary-color;
+          visibility: hidden;
+          transform: scaleX(0);
+          transform-origin: bottom right;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:hover:after {
+          visibility: visible;
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+      }
+    }
+  }
+
+  .image-content {
+    width: 40%;
+    img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+// Стилі для footer
+footer {
+  background-color: #f9f9f9;
+  color: $dark-gray;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 50px;
+  flex-shrink: 0;
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+  }
+}
+.page-container {
+  display: flex;
+  flex-direction: column; // Вертикальне вирівнювання
+  height: 100%; // Заповнення всієї висоти сторінки
+}
+
+// Контейнер для центрованого вмісту
+.container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
